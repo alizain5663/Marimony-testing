@@ -1,0 +1,249 @@
+<div style="font-family: 'Poppins';">
+
+<nav class="navbar navbar-expand-lg bgColor p-4">
+    <div class="container">
+        <a class="navbar-brand text-white fs-4">FIND MATCH</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="nav resnav">
+                <li class="nav-item">
+                    <button class="btnEdit" type="button">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        LOG OUT
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+      <div
+        style="background-color: #0F4D5C; color: white"
+        class=""
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2">
+              <label class="form-label mt-3">Age</label>
+              <br/>
+              <select
+                style="background-color: rgba(255, 255, 255, 0.5); width: 100%;"
+                class="selectOption"
+                aria-label="Default select example"
+               
+
+                [(ngModel)]="Min"
+              >
+              <option selected>
+                Select Min Age
+              </option>
+                <option class="optStyle" selected>
+                  Minimum Age
+                </option>
+                <option class="optStyle" value="18">
+                  18
+                </option>
+                <option class="optStyle" value="19">
+                  19
+                </option>
+                <option class="optStyle" value="20">
+                  20
+                </option>
+                <option class="optStyle" value="21">
+                  21
+                </option>
+                <option class="optStyle" value="22">
+                  22
+                </option>
+                <option class="optStyle" value="23">
+                  23
+                </option>
+                <option class="optStyle" value="24">
+                  24
+                </option>
+                <option class="optStyle" value="25">
+                  25
+                </option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <select
+                style="background-color: rgba(255, 255, 255, 0.5); width: 100%;"
+                class="selectOption mt-5"
+                aria-label="Default select example"
+                [(ngModel)]="MAx"
+              >
+              <option selected>
+                Select Maximum Age
+              </option>
+                <option class="optStyle" selected ngModel="{{MAx}}">
+                  Maximum Age
+                </option>
+                <option class="optStyle" value="18">
+                  18
+                </option>
+                <option class="optStyle" value="19">
+                  19
+                </option>
+                <option class="optStyle" value="20">
+                  20
+                </option>
+                <option class="optStyle" value="21">
+                  21
+                </option>
+                <option class="optStyle" value="22">
+                  22
+                </option>
+                <option class="optStyle" value="23">
+                  23
+                </option>
+                <option class="optStyle" value="24">
+                  24
+                </option>
+                <option class="optStyle" value="25">
+                  25
+                </option>
+                <option class="optStyle" value="30">
+                30
+                </option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label mt-3">From</label>
+              <br/>
+              <select
+                style="background-color: rgba(255, 255, 255, 0.5); width: 100%;"
+                class="selectOption wdOption"
+                aria-label="Default select example"
+                [(ngModel)]="country"
+              >
+              <option selected>
+                Select Country
+              </option>
+                <option class="optStyle" value="Pakistan" selected>
+                  Pakistan
+                </option>
+                <option class="optStyle" value="United Arab Emirates">
+                  United Arab Emirates
+                </option>
+                <option class="optStyle" value="Vietnam">
+                  Vietnam
+                </option>
+                <option class="optStyle" value="Austria">
+                  Austria
+                </option>
+                <option class="optStyle" value="Hungary">
+                  Hungary
+                </option>
+                <option class="optStyle" value="Turkey">
+                  Turkey
+                </option>
+                <option class="optStyle" value="Switzerland">
+                  Switzerland
+                </option>
+                <option class="optStyle" value="Germany">
+                  Germany
+                </option>
+                <option class="optStyle" value="Iran">
+                  Iran
+                </option>
+                <option class="optStyle" value=" United Kingdom">
+                  United Kingdom
+                </option>
+                <option class="optStyle" value="France">
+                  France
+                </option>
+                <option class="optStyle" value="Kyrgyzstan">
+                  Kyrgyzstan
+                </option>
+                <option class="optStyle" value="Lebanon">
+                  Lebanon
+                </option>
+              </select>
+            </div>
+            <div class="col-md-3 mt-2">
+              <label class="form-label lblGender ml-5">Gender:</label>
+              <img     (click)="filter();" src={{pathmale}} alt="..." width="80" height="90" />
+              <img src={{pathfemale}} alt="..." width="80" height="90" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bgCardColor">
+        <div class="container">
+          <ng-container *ngIf="personList.length > 0">
+          <div class="row">
+                <div class="col-md-6 mt-5" *ngFor="let person of personList">
+                  <div class="card mb-3 styleCard">
+                    <div class="row g-0 styleCard">
+                      <div class="col-md-4">
+                        <img
+                          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                          class="rounded-start cardImage"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="col-md-8 cardbg">
+                        <div class="card-body">
+                          <div class="d-flex">
+                            <div class="me-auto">
+                              <h5 class="card-title">{{person.name}}</h5>
+                            </div>
+                            <div class="">
+                              <img
+                                src="https://bit.ly/3BJ3wIg"
+                                class="imgSize"
+                                alt="..."
+                              />
+                            </div>
+                          </div>
+
+                          <p class="card-text text-muted">
+                            {{person.gender}} | {{person.age}} | {{person.caste}}
+                          </p>
+                          <p class="card-text text-muted">
+                            {{person.training}} | {{person.professional}} | {{person.city}}
+                          </p>
+                          <p class="card-text text-muted">
+                            {{person.appearance}} | {{person.color}} | {{person.height}}
+                          </p>
+                          <div class="d-flex">
+                            <div class="me-auto">
+                              <img
+                                src={{pathmessage}}
+                                class="imgCard1"
+                                (click)="letschat(person._id);"
+                                alt="..."
+                              />
+                            </div>
+                            <div>
+                              <img
+                                src={{pathheart}}
+                                class="imgCard2"
+                                (click)="AddtoFavClick(person); "
+                                alt="..."
+                              />
+                            </div>
+                            <div class="ms-auto">
+                              <button type="submit" class="insterest" (click)="onSendInterestClick(person);">
+                                  Send Interest
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="personList.length == 0">
+                <h5 style="text-align: center; padding-top: 100px; color: black; font-weight: bold;"> No Users Found</h5>
+        </ng-container>
+        </div>
+      </div></div>
+      
